@@ -18,7 +18,7 @@ class Routing extends Component {
                 <Route path="/campaigns/:id" component={CampaignDetail} />
                 <Route path="/campaigns/:id/edit" component={CampaignEdit} />
                 <Route path="/campaigns/:id/reports/create" component={ReportCreate} />
-                <Route path="/campaigns/:id/reports/edit" component={ReportEdit} />
+                <Route path="/campaigns/:id/reports/:reportId/edit" component={ReportEdit} />
                 <Route path="/campaigns/:id/reports/:reportId" component={ReportDetail} />
             </Router>
         );

@@ -2,7 +2,8 @@ import React from 'react'
 
 const ReportCreate = () =>
     <div>
-        ReportCreate
+        <input type="text" placeholder="Report title"/>
+        <button>Add Report</button>
     </div>;
 
 export default ReportCreate;
