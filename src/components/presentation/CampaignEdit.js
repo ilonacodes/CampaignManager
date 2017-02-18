@@ -1,9 +1,18 @@
 import React from 'react'
 
-const CampaignEdit = (props) =>
-    <span>
-        <input type="text" placeholder="Edit Campaign"/>
-        <button>Edit Campaign</button>
+const CampaignEdit = ({id, title, onTitleChange, onConfirm}) => {
+
+    const onClick = (e) =>
+        onConfirm({id, title});
+
+    return <span>
+        <input type="text"
+               placeholder="Edit Campaign"
+               value={title}
+               onChange={onTitleChange}/>
+        <button onClick={onClick}>Edit Campaign</button>
     </span>;
+
+};
 
 export default CampaignEdit;

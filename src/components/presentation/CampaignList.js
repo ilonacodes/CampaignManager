@@ -11,7 +11,6 @@ const CampaignListItem = (props) =>
 
 
 const CampaignList = (props) => {
-    console.log(props);
 
     return <div className="CampaignList">
         <span>
