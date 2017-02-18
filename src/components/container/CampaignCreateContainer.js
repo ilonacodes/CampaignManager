@@ -2,6 +2,7 @@ import {changeCampaignForm} from "../../actions/CampaignForm";
 import CampaignCreate from "../presentation/CampaignCreate";
 import {connect} from "react-redux";
 import {createCampaign} from "../../actions/CampaignCRUD";
+import {hashHistory} from "react-router";
 
 const mapStateToProps = (state) => {
     return {
@@ -14,8 +15,10 @@ const mapDispatchToProps = (dispatch) => {
         onTitleChange: (e) => 
             dispatch(changeCampaignForm({title: e.target.value})),
 
-        onConfirm: (campaign) =>
+        onConfirm: (campaign) => {
+            hashHistory.push("/");
             dispatch(createCampaign(campaign))
+        }
     }
 };
 
