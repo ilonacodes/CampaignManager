@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        delete: (id) => {
+        deleteCampaign: (id) => {
             dispatch(deleteCampaign(id))
         }
     }
