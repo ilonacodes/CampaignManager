@@ -1,18 +1,6 @@
 import React from "react";
-import "../App.css";
+import "../../App.css";
 import { Link } from "react-router"
-
-const campaignList = [
-    {
-        title: "50% discount of Apple product",
-        id: 56
-    },
-
-    {
-        title: "70% discount of Apple product",
-        id: 45
-    }
-];
 
 const CampaignListItem = (props) =>
     <tr>
@@ -22,18 +10,21 @@ const CampaignListItem = (props) =>
     </tr>;
 
 
-const CampaignList = (props) =>
-    <div className="CampaignList">
+const CampaignList = (props) => {
+    console.log(props);
+
+    return <div className="CampaignList">
         <span>
             <h1>Campaign Manager</h1>
             <Link to="/campaigns/create">Create</Link></span>
         <table>
             <tbody>
-            {campaignList.map(campaign =>
+            {props.campaignList.map(campaign =>
                 <CampaignListItem {...campaign} key={campaign.id}/>
             )}
             </tbody>
         </table>
     </div>;
+}
 
 export default CampaignList;

@@ -1,7 +1,10 @@
-import CampaignsReducer from "./CampaignsReducer";
+import campaigns from "./campaigns";
+import { combineReducers } from "redux";
+import {campaignForm} from "./campaignForm";
 
-const AppReducer = combineReducers ({
-    CampaignsReducer
+const AppReducer = combineReducers({
+    campaigns,
+    campaignForm
 });
 
 export default AppReducer;
