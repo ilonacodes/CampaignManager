@@ -21,8 +21,10 @@ const reports = (state = {list: [], maxId: 0}, action) => {
         case REPORTS.EDIT:
             return {
                 ...state,
-                list: state.list.map((report) => {
-                    if (report.id !== action.report.id) {
+                list: state.list.map(report => {
+                    let reportId = report.id;
+                    let actionReportId = action.report.id;
+                    if (reportId !== actionReportId) {
                         return report;
                     }
                     return action.report;

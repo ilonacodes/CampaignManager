@@ -4,17 +4,20 @@ export const REPORTS = {
     EDIT: "REPORT_EDIT"
 };
 
-export const createReport = (report) => ({
+export const createReport = (campaignId, report) => ({
     type: REPORTS.CREATE,
+    campaignId,
     report
 });
 
-export const editReport = (report) => ({
+export const editReport = (campaignId, report) => ({
     type: REPORTS.EDIT,
+    campaignId,
     report
 });
 
-export const deleteReport = (id) => ({
+export const deleteReport = (campaignId, id) => ({
     type: REPORTS.DELETE,
+    campaignId,
     id
 });

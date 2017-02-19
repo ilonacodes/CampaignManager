@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch) => {
 
         onConfirm: (campaign) => {
             hashHistory.push("/");
-            dispatch(createCampaign(campaign))
+            dispatch(createCampaign(campaign));
         }
     }
 };

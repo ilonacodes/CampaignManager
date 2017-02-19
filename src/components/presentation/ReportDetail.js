@@ -3,8 +3,8 @@ import React from "react";
 const reportDetail = {
     title: "Month of February",
     id: 40,
-    start_date: "2016/02/03",
-    end_date: "2016/02/27",
+    startDate: "2016/02/03",
+    endDate: "2016/02/27",
     kpis: [
         {
             name: "Reach",
@@ -25,9 +25,9 @@ const ReportDetail = (props) =>
         </span>
 
         <span>
-            {reportDetail.start_date}
+            {reportDetail.startDate}
             -
-            {reportDetail.end_date}
+            {reportDetail.endDate}
         </span>
 
         <div>

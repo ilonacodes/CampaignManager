@@ -2,6 +2,7 @@ import {editCampaign} from "../actions/CampaignCRUD";
 import {createCampaign} from "../actions/CampaignCRUD";
 import CampaignsReducer from "./campaigns";
 import {deleteCampaign} from "../actions/CampaignCRUD";
+import {createReport} from "../actions/ReportCRUD";
 
 describe("CampaignsReducer", () => {
 
@@ -134,5 +135,18 @@ describe("CampaignsReducer", () => {
         expect(newState.list.length).toEqual(2);
         expect(newState.list[0].title).toEqual(firstCampaign.title);
         expect(newState.list[1].title).toEqual(thirdCampaign.title);
+    });
+
+    it("handles reports actions also", () => {
+        let firstAction = createCampaign(firstCampaign);
+        let state = CampaignsReducer(undefined, firstAction);
+
+        let report = {title: "a report"};
+        let action = createReport(1, report);
+        let newState = CampaignsReducer(state, action);
+
+        let campaign = newState.list[0];
+        expect(campaign.reports.list.length).toEqual(1);
+        expect(campaign.reports.list[0].title).toEqual(report.title);
     });
 });

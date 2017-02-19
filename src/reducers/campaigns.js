@@ -1,4 +1,22 @@
 import {CAMPAIGNS} from '../actions/CampaignCRUD'
+import {REPORTS} from "../actions/ReportCRUD";
+import reports from "./reports";
+
+const handleReportsAction = (state, action) => {
+    return {
+        ...state,
+        list: state.list.map(campaign => {
+            if (campaign.id === action.campaignId) {
+                return {
+                    ...campaign,
+                    reports: reports(campaign.reports, action)
+                };
+            }
+
+            return campaign;
+        })
+    };
+};
 
 const campaigns = (state = {list: [], maxId: 0}, action) => {
     switch (action.type) {
@@ -38,6 +56,15 @@ const campaigns = (state = {list: [], maxId: 0}, action) => {
                 list: state.list
                     .filter((campaign) => campaign.id !== action.id)
             };
+
+        case REPORTS.CREATE:
+            return handleReportsAction(state, action);
+
+        case REPORTS.EDIT:
+            return handleReportsAction(state, action);
+
+        case REPORTS.DELETE:
+            return handleReportsAction(state, action);
 
         default:
             return state;
