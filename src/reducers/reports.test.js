@@ -1,4 +1,4 @@
-import ReportsReducer from "./ReportsReducer";
+import ReportsReducer from "./reports";
 import {createReport} from "../actions/ReportCRUD";
 import {editReport} from "../actions/ReportCRUD";
 import {deleteReport} from "../actions/ReportCRUD";
@@ -13,9 +13,9 @@ describe("ReportsReducer", () => {
         let action = createReport(firstReport);
         let newState = ReportsReducer(undefined, action);
 
-        expect(newState.reports.length).toEqual(1);
-        expect(newState.reports[0].title).toEqual(firstReport.title);
-        expect(newState.reports[0].id).toEqual(1);
+        expect(newState.list.length).toEqual(1);
+        expect(newState.list[0].title).toEqual(firstReport.title);
+        expect(newState.list[0].id).toEqual(1);
     });
 
     it("creates two reports", () => {
@@ -25,9 +25,9 @@ describe("ReportsReducer", () => {
         let action = createReport(secondReport);
         let newState = ReportsReducer(firstState, action);
 
-        expect(newState.reports.length).toEqual(2);
-        expect(newState.reports[1].title).toEqual(secondReport.title);
-        expect(newState.reports[1].id).toEqual(2);
+        expect(newState.list.length).toEqual(2);
+        expect(newState.list[1].title).toEqual(secondReport.title);
+        expect(newState.list[1].id).toEqual(2);
     });
 
     it("creates three reports", () => {
@@ -40,9 +40,9 @@ describe("ReportsReducer", () => {
         let action = createReport(thirdReport);
         let newState = ReportsReducer(secondState, action);
 
-        expect(newState.reports.length).toEqual(3);
-        expect(newState.reports[2].title).toEqual(thirdReport.title);
-        expect(newState.reports[2].id).toEqual(3);
+        expect(newState.list.length).toEqual(3);
+        expect(newState.list[2].title).toEqual(thirdReport.title);
+        expect(newState.list[2].id).toEqual(3);
     });
 
     it("edits one report", () => {
@@ -54,9 +54,9 @@ describe("ReportsReducer", () => {
         let action = editReport(reportUpdate);
         let newState = ReportsReducer(state, action);
 
-        expect(newState.reports.length).toEqual(1);
-        expect(newState.reports[0].title).toEqual(reportUpdate.title);
-        expect(newState.reports[0].id).toEqual(1);
+        expect(newState.list.length).toEqual(1);
+        expect(newState.list[0].title).toEqual(reportUpdate.title);
+        expect(newState.list[0].id).toEqual(1);
     });
 
     it("edits one report from three reports", () => {
@@ -73,11 +73,11 @@ describe("ReportsReducer", () => {
         let action = editReport(reportUpdate);
         let newState = ReportsReducer(thirdState, action);
 
-        expect(newState.reports.length).toEqual(3);
-        expect(newState.reports[0].title).toEqual(firstReport.title);
-        expect(newState.reports[1].title).toEqual(secondReport.title);
-        expect(newState.reports[2].title).toEqual(reportUpdate.title);
-        expect(newState.reports[2].id).toEqual(3);
+        expect(newState.list.length).toEqual(3);
+        expect(newState.list[0].title).toEqual(firstReport.title);
+        expect(newState.list[1].title).toEqual(secondReport.title);
+        expect(newState.list[2].title).toEqual(reportUpdate.title);
+        expect(newState.list[2].id).toEqual(3);
     });
 
     it("edits one report and creates an another report", () => {
@@ -91,10 +91,10 @@ describe("ReportsReducer", () => {
         let action = createReport(secondReport);
         let newState = ReportsReducer(secondState, action);
 
-        expect(newState.reports.length).toEqual(2);
-        expect(newState.reports[0].title).toEqual(firstReport.title);
-        expect(newState.reports[1].title).toEqual(secondReport.title);
-        expect(newState.reports[1].id).toEqual(2);
+        expect(newState.list.length).toEqual(2);
+        expect(newState.list[0].title).toEqual(firstReport.title);
+        expect(newState.list[1].title).toEqual(secondReport.title);
+        expect(newState.list[1].id).toEqual(2);
     });
     
     it("deletes one report and a user see an empty list of reports", () => {
@@ -104,7 +104,7 @@ describe("ReportsReducer", () => {
         let action = deleteReport(1);
         let newState = ReportsReducer(state, action);
 
-        expect(newState.reports).toEqual([]);
+        expect(newState.list).toEqual([]);
     });
 
     it("deletes the second report from a list of reports", () => {
@@ -120,8 +120,8 @@ describe("ReportsReducer", () => {
         let action = deleteReport(2);
         let newState = ReportsReducer(thirdState, action);
 
-        expect(newState.reports.length).toEqual(2);
-        expect(newState.reports[0].title).toEqual(firstReport.title);
-        expect(newState.reports[1].title).toEqual(thirdReport.title);
+        expect(newState.list.length).toEqual(2);
+        expect(newState.list[0].title).toEqual(firstReport.title);
+        expect(newState.list[1].title).toEqual(thirdReport.title);
     });
 });

@@ -6,7 +6,11 @@ const campaigns = (state = {list: [], maxId: 0}, action) => {
             let id = state.maxId + 1;
             let campaign = {
                 ...action.campaign,
-                id: id
+                id: id,
+                reports: {
+                    list: [],
+                    maxId: 0
+                }
             };
             return {
                 maxId: id,

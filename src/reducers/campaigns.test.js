@@ -9,13 +9,24 @@ describe("CampaignsReducer", () => {
     let secondCampaign = {title: "my second campaign"};
     let thirdCampaign = {title: "my third campaign"};
 
-    it("creates new campaign", () => {
+    it("creates a new campaign", () => {
         let action = createCampaign(firstCampaign);
         let newState = CampaignsReducer(undefined, action);
 
         expect(newState.list.length).toEqual(1);
         expect(newState.list[0].title).toEqual(firstCampaign.title);
         expect(newState.list[0].id).toEqual(1);
+    });
+
+    it("creates a new campaign with reports", () => {
+        let action = createCampaign(firstCampaign);
+        let newState = CampaignsReducer(undefined, action);
+
+        expect(newState.list.length).toEqual(1);
+        expect(newState.list[0].title).toEqual(firstCampaign.title);
+        expect(newState.list[0].id).toEqual(1);
+        expect(newState.list[0].reports.list).toEqual([]);
+        expect(newState.list[0].reports.maxId).toEqual(0);
     });
 
     it("creates two campaigns", () => {

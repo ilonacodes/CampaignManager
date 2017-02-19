@@ -1,6 +1,6 @@
 import {REPORTS} from '../actions/ReportCRUD'
 
-const ReportsReducer = (state = {reports: [], maxId: 0}, action) => {
+const reports = (state = {list: [], maxId: 0}, action) => {
     switch(action.type) {
         case REPORTS.CREATE:
             let id = state.maxId + 1;
@@ -11,8 +11,8 @@ const ReportsReducer = (state = {reports: [], maxId: 0}, action) => {
 
             return {
                 maxId: id,
-                reports: [
-                    ...state.reports,
+                list: [
+                    ...state.list,
                     report
                 ]
 
@@ -21,7 +21,7 @@ const ReportsReducer = (state = {reports: [], maxId: 0}, action) => {
         case REPORTS.EDIT:
             return {
                 ...state,
-                reports: state.reports.map((report) => {
+                list: state.list.map((report) => {
                     if (report.id !== action.report.id) {
                         return report;
                     }
@@ -32,7 +32,7 @@ const ReportsReducer = (state = {reports: [], maxId: 0}, action) => {
         case REPORTS.DELETE:
             return {
                 ...state,
-                reports: state.reports
+                list: state.list
                     .filter((report) => report.id !== action.id)
             };
 
@@ -41,4 +41,4 @@ const ReportsReducer = (state = {reports: [], maxId: 0}, action) => {
     }
 };
 
-export default ReportsReducer;
+export default reports;
