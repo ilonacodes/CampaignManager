@@ -6,7 +6,7 @@ import {hashHistory} from "react-router";
 
 const mapStateToProps = (state) => {
     return {
-        title: state.campaignForm.campaign.title
+        title: state.campaignForm.campaign.title || ""
     }
 };
 
@@ -16,8 +16,8 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(changeCampaignForm({title: e.target.value})),
 
         onConfirm: (campaign) => {
-            hashHistory.push("/");
             dispatch(createCampaign(campaign));
+            hashHistory.push("/");
         }
     }
 };

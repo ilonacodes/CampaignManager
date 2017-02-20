@@ -1,43 +1,25 @@
 import React from "react";
 
-const reportDetail = {
-    title: "Month of February",
-    id: 40,
-    startDate: "2016/02/03",
-    endDate: "2016/02/27",
-    kpis: [
-        {
-            name: "Reach",
-            value: 1500
-        },
-
-        {
-            name: "Views",
-            value: 234
-        }
-    ]
-};
-
-const ReportDetail = (props) =>
+const ReportDetail = ({title, startDate, endDate, reachKpi, viewsKpi}) =>
     <div className="ReportDetail">
         <span>
-            <h1>{reportDetail.title}</h1>
+            <h1>{title}</h1>
         </span>
 
         <span>
-            {reportDetail.startDate}
+            {startDate}
             -
-            {reportDetail.endDate}
+            {endDate}
         </span>
 
         <div>
+            <h3>KPIs: </h3>
             <dl>
-                {reportDetail.kpis.map(kpi =>
-                    <div key={kpi.name}>
-                        <dt>{kpi.name}</dt>
-                        <dd>{kpi.value}</dd>
-                    </div>
-                )}
+                <dt>Reach: </dt>
+                <dd>{reachKpi}</dd>
+
+                <dt>Views: </dt>
+                <dd>{viewsKpi}</dd>
             </dl>
         </div>
     </div>;

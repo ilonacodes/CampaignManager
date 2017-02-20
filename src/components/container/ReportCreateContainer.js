@@ -7,11 +7,11 @@ import {connect} from "react-redux";
 const mapStateToProps = (state, ownProps) => {
     return {
         campaignId: parseInt(ownProps.params.id, 10),
-        title: state.reportForm.report.title,
-        startDate: state.reportForm.report.startDate,
-        endDate: state.reportForm.report.endDate,
-        reachKpi: state.reportForm.report.reachKpi,
-        viewsKpi: state.reportForm.report.viewsKpi
+        title: state.reportForm.report.title || "",
+        startDate: state.reportForm.report.startDate || "",
+        endDate: state.reportForm.report.endDate || "",
+        reachKpi: state.reportForm.report.reachKpi || 0,
+        viewsKpi: state.reportForm.report.viewsKpi || 0
     }
 };
 
@@ -33,8 +33,8 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(changeReportForm({viewsKpi: e.target.value})),
 
         onConfirm: (campaignId, report) => {
-            hashHistory.push(`/campaigns/${campaignId}`);
             dispatch(createReport(campaignId, report));
+            hashHistory.push(`/campaigns/${campaignId}`);
         }
     };
 };

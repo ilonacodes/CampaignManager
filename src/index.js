@@ -4,6 +4,8 @@ import App from "./components/App";
 import "./index.css";
 import AppReducer from "./reducers";
 import {createStore} from "redux";
+import {hashHistory} from "react-router";
+import {routeChanged} from "./actions/Router";
 
 let store = createStore(
     AppReducer,
@@ -18,8 +20,8 @@ let store = createStore(
                             {
                                 id: 1,
                                 title: "Month of February",
-                                startDate: "2016/02/03",
-                                endDate: "2016/02/27",
+                                startDate: "2016-02-03",
+                                endDate: "2016-02-27",
                                 reachKpi: 75000,
                                 viewsKpi: 17124
                             }
@@ -37,3 +39,5 @@ render(
     <App store={store}/>,
     document.getElementById('root')
 );
+
+hashHistory.listen(change => store.dispatch(routeChanged(change)));

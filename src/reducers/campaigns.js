@@ -45,7 +45,11 @@ const campaigns = (state = {list: [], maxId: 0}, action) => {
                     if (campaign.id !== action.campaign.id) {
                         return campaign;
                     }
-                    return action.campaign;
+                    
+                    return {
+                        ...campaign,
+                        ...action.campaign
+                    };
                 })
             };
 

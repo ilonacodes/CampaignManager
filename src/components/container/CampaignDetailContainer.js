@@ -1,5 +1,6 @@
 import CampaignDetail from "../presentation/CampaignDetail";
 import {connect} from "react-redux";
+import {deleteReport} from "../../actions/ReportCRUD";
 
 const findCampaignById = (campaigns, id) => {
     return campaigns.find(campaign => campaign.id === id);
@@ -18,7 +19,11 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {};
+    return {
+        deleteReport: (campaignId, id) => {
+            dispatch(deleteReport(campaignId, id))
+        }
+    };
 };
 
 export const CampaignDetailContainer = connect(

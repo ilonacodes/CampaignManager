@@ -1,12 +1,13 @@
 import {REPORT_FORM} from "../actions/ReportForm";
+import {ROUTER} from "../actions/Router";
 
 export const reportForm = (state = {
     report: {
-        title: "",
-        startDate: "",
-        endDate: "",
-        reachKpi: 0,
-        viewsKpi: 0
+        title: null,
+        startDate: null,
+        endDate: null,
+        reachKpi: null,
+        viewsKpi: null
     }
 }, action) => {
     switch (action.type) {
@@ -17,6 +18,15 @@ export const reportForm = (state = {
                     ...action.change
                 }
             };
+
+        case ROUTER.CHANGED:
+            return {report: {
+                title: null,
+                startDate: null,
+                endDate: null,
+                reachKpi: null,
+                viewsKpi: null
+            }};
 
         default:
             return state;
