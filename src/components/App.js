@@ -22,7 +22,14 @@ export const routes = [
 
 const App = ({store}) =>
     <Provider store={store}>
-        <Router history={hashHistory} routes={routes}/>
+        <div className="container">
+            <div className="row">
+                <div className="col-xs-2"></div>
+                <div className="col-xs-8 main-container">
+                    <Router history={hashHistory} routes={routes}/>
+                </div>
+            </div>
+        </div>
     </Provider>;
 
 export default App;

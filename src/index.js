@@ -2,6 +2,7 @@ import React from "react";
 import {render} from "react-dom";
 import App from "./components/App";
 import "./index.css";
+import "./lib/bootstrap-3.3.7-dist/css/bootstrap.min.css";
 import AppReducer from "./reducers";
 import {createStore} from "redux";
 import {hashHistory} from "react-router";
