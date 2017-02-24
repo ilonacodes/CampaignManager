@@ -22,6 +22,7 @@ const CampaignEdit = ({id, title, onTitleChange, onConfirm}) => {
                        placeholder="Edit Campaign"
                        value={title}
                        onChange={onTitleChange}/>
+
             </div>
         </div>
 
@@ -32,15 +33,6 @@ const CampaignEdit = ({id, title, onTitleChange, onConfirm}) => {
             </div>
         </div>
     </div>;
-
-    // <span>
-    //     <input type="text"
-    //            placeholder="Edit Campaign"
-    //            value={title}
-    //            onChange={onTitleChange}/>
-    //     <button onClick={onClick}>Edit Campaign</button>
-    // </span>;
-
 };
 
 export default CampaignEdit;

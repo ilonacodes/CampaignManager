@@ -10,6 +10,11 @@
     padding-left: 6rem;
 }
 
+.CampaignList .Filter {
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+}
+
 .main-container {
     background-color: #f5f5f5;
     border-radius: 5px;
@@ -66,6 +71,10 @@
 
 .CampaignDetail .Back {
     margin-top: 2rem;
+}
+
+.CampaignDetail .Filter {
+    margin-bottom: 1rem;
 }
 
 .CampaignDetail .row {
@@ -141,63 +150,3 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
-
-/*body {*/
-  /*padding: 0;*/
-  /*margin: 0;*/
-  /*font-family: sans-serif;*/
-/*}*/
-
-/*.CampaignList {*/
-  /*width: 600px;*/
-  /*background-color: #F5F3EE;*/
-  /*margin: 0 auto;*/
-  /*position: relative;*/
-/*}*/
-
-/*.CampaignList h1 {*/
-  /*text-align: center;*/
-  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-  /*color: #7D1935;*/
-  /*margin-top: 0;*/
-/*}*/
-
-/*.CampaignList table {*/
-  /*margin: 0 auto;*/
-  /*padding: 10px;*/
-/*}*/
-
-/*.CampaignList tr, td  {*/
-  /*width: 8rem;*/
-  /*height: 2rem;*/
-  /*border: 3px solid #4A96AD;*/
-  /*text-align: center;*/
-  /*background-color: #fff;*/
-/*}*/
-
-/*.CampaignList a {*/
-  /*text-decoration: none;*/
-  /*color: #4A96AD;*/
-  /*font-size: 0.8rem;*/
-/*}*/
-
-/*.CampaignList a:hover {*/
-  /*color: #7D1935;*/
-/*}*/
-
-/*.CampaignList .Create {*/
-  /*width: 8rem;*/
-  /*height: 2rem;*/
-  /*border: 3px solid #7D1935;*/
-  /*text-align: center;*/
-  /*background-color: #fff;*/
-  /*margin-left: 234px;*/
-  /*margin-top: 20px;*/
-/*}*/
-
-/*.CampaignCreate {*/
-  /*width: 600px;*/
-  /*background-color: #F5F3EE;*/
-  /*margin: 0 auto;*/
-  /*position: relative;*/
-/*}*/

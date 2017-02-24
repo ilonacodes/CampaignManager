@@ -17,5 +17,4 @@ export const campaignForm = (state = {campaign: {title: null}}, action) => {
         default:
             return state;
     }
-
 };

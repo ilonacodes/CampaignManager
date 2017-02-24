@@ -15,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
         id: id,
         title: campaign.title,
         reports: campaign.reports.list
+            .filter(report => report.title.toLowerCase().includes(state.filter.toLowerCase()))
     };
 };
 

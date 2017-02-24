@@ -1,5 +1,6 @@
-import React from 'react';
-import {Link} from 'react-router';
+import React from "react";
+import {Link} from "react-router";
+import {FilterContainer} from "../container/FilterContainer";
 
 const ReportListItem = ({campaignId, id, title, startDate, endDate, deleteReport}) => {
 
@@ -20,15 +21,7 @@ const ReportListItem = ({campaignId, id, title, startDate, endDate, deleteReport
             </div>
         </div>
     </div>;
-    // return <tr>
-    //     <td><Link to={`/campaigns/${campaignId}/reports/${id}`}>{title}</Link></td>
-    //     <td>{startDate}</td>
-    //     <td>{endDate}</td>
-    //     <td><Link to={`/campaigns/${campaignId}/reports/${id}/edit`}>Edit</Link></td>
-    //     <td><a href="#" onClick={onClick}>Delete</a></td>
-    // </tr>;
 };
-
 
 const CampaignDetail = ({id, title, reports, deleteReport}) =>
     <div className="CampaignDetail container-fluid">
@@ -38,6 +31,14 @@ const CampaignDetail = ({id, title, reports, deleteReport}) =>
             </div>
             <div className="col-xs-8 text-center"><h1>{title}</h1></div>
             <div className="col-xs-2"></div>
+        </div>
+
+        <div className="row">
+            <div className="col-xs-4"></div>
+            <div className="col-xs-4 Filter">
+                <FilterContainer />
+            </div>
+            <div className="col-xs-4"></div>
         </div>
 
         <div className="container-fluid List">
@@ -58,23 +59,5 @@ const CampaignDetail = ({id, title, reports, deleteReport}) =>
             </div>
         </div>
     </div>;
-
-// <div className="CampaignDetail container-fluid">
-//     <div>
-//         <h1>{title}</h1>
-//         <Link to={`/campaigns/${id}/reports/create`}>Create report</Link>
-//     </div>
-//
-//     <table>
-//         <tbody>
-//         {reports.map(report =>
-//             <ReportListItem {...report}
-//                 campaignId={id}
-//                 key={report.id}
-//                 deleteReport={deleteReport}/>
-//         )}
-//         </tbody>
-//     </table>
-// </div>;
 
 export default CampaignDetail;

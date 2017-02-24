@@ -57,45 +57,6 @@ const ReportCreate = ({title, onTitleChange, startDate, onStartDateChange, endDa
         </div>
 
     </div>;
-    // return <div>
-    //     <div>
-    //         <input type="text"
-    //                placeholder="Report title"
-    //                value={title}
-    //                onChange={onTitleChange}/>
-    //     </div>
-    //
-    //     <div>
-    //         <input type="date"
-    //                placeholder="Start date"
-    //                value={startDate}
-    //                onChange={onStartDateChange}/>
-    //     </div>
-    //
-    //     <div>
-    //         <input type="date"
-    //                placeholder="End date"
-    //                value={endDate}
-    //                onChange={onEndDateChange}/>
-    //     </div>
-    //
-    //     <div>
-    //         <input type="number"
-    //                placeholder="Reach KPI"
-    //                value={reachKpi}
-    //                onChange={onReachKpiChange}/>
-    //     </div>
-    //
-    //     <div>
-    //         <input type="number"
-    //                placeholder="Views KPI"
-    //                value={viewsKpi}
-    //                onChange={onViewsKpiChange}/>
-    //     </div>
-    //
-    //     <button onClick={onClick}>Submit</button>
-    // </div>;
-
 };
 
 export default ReportCreate;

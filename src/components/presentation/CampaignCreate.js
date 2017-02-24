@@ -21,13 +21,15 @@ const CampaignCreate = ({title, onTitleChange, onConfirm}) => {
                        type="text"
                        placeholder="Campaign title"
                        value={title}
-                       onChange={onTitleChange}/></div>
+                       onChange={onTitleChange}/>
+
+            </div>
         </div>
 
         <div className="row">
             <div className="col-xs-5"></div>
             <div className="col-xs-2">
-            <button className="btn btn-success form-control" onClick={onClick}>Save</button>
+                <button className="btn btn-success form-control" onClick={onClick}>Save</button>
             </div>
         </div>
     </div>;

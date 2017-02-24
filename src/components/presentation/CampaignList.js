@@ -1,6 +1,7 @@
 import React from "react";
 import "../../App.css";
-import {Link} from "react-router"
+import {Link} from "react-router";
+import {FilterContainer} from "../container/FilterContainer";
 
 const CampaignListItem = ({id, title, deleteCampaign}) => {
 
@@ -8,7 +9,9 @@ const CampaignListItem = ({id, title, deleteCampaign}) => {
         deleteCampaign(id);
 
     return <div className="row">
-        <div className="col-xs-8 List"><Link to={"/campaigns/" + id}>{title}</Link></div>
+        <div className="col-xs-8 List">
+            <Link to={"/campaigns/" + id}>{title}</Link>
+        </div>
         <div className="col-xs-4 Buttons">
             <div className="btn-group">
                 <Link className="btn btn-primary" to={"/campaigns/" + id + "/edit"}>Edit</Link>
@@ -18,15 +21,20 @@ const CampaignListItem = ({id, title, deleteCampaign}) => {
     </div>;
 };
 
-
-const CampaignList = ({campaignList, deleteCampaign}) => {
+export const CampaignList = ({campaignList, deleteCampaign}) => {
 
     return <div className="CampaignList">
         <div className="container-fluid">
             <div className="row CampaignListTitle">
-                <div className="col-xs-2"></div>
-                <div className="col-xs-8"><h1>Campaign Manager</h1></div>
-                <div className="col-xs-2"></div>
+                <div className="col-xs-12 text-center"><h1>Campaign Manager</h1></div>
+            </div>
+
+            <div className="row">
+                <div className="col-xs-4"></div>
+                <div className="col-xs-4 btn-group Filter">
+                    <FilterContainer />
+                </div>
+                <div className="col-xs-4"></div>
             </div>
         </div>
 
@@ -51,5 +59,3 @@ const CampaignList = ({campaignList, deleteCampaign}) => {
         </div>
     </div>;
 };
-
-export default CampaignList;

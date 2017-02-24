@@ -1,4 +1,4 @@
-import {CAMPAIGNS} from '../actions/CampaignCRUD'
+import {CAMPAIGNS} from "../actions/CampaignCRUD";
 import {REPORTS} from "../actions/ReportCRUD";
 import reports from "./reports";
 

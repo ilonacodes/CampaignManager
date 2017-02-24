@@ -2,11 +2,13 @@ import campaigns from "./campaigns";
 import { combineReducers } from "redux";
 import {campaignForm} from "./campaignForm";
 import {reportForm} from "./reportForm";
+import {filter} from "./filter";
 
 const AppReducer = combineReducers({
     campaigns,
     campaignForm,
-    reportForm
+    reportForm,
+    filter
 });
 
 export default AppReducer;

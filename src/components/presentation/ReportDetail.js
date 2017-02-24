@@ -35,27 +35,4 @@ const ReportDetail = ({campaignId, id, title, startDate, endDate, reachKpi, view
         </div>
     </div>;
 
-// <div className="ReportDetail">
-    //     <span>
-    //         <h1>{title}</h1>
-    //     </span>
-    //
-    //     <span>
-    //         {startDate}
-    //         -
-    //         {endDate}
-    //     </span>
-    //
-    //     <div>
-    //         <h3>KPIs: </h3>
-    //         <dl>
-    //             <dt>Reach: </dt>
-    //             <dd>{reachKpi}</dd>
-    //
-    //             <dt>Views: </dt>
-    //             <dd>{viewsKpi}</dd>
-    //         </dl>
-    //     </div>
-    // </div>;
-
 export default ReportDetail;

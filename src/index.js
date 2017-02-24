@@ -16,6 +16,8 @@ let store = createStore(
                 {
                     id: 1,
                     title: "30% Off Campaign",
+                    startDate: "2016-02-03",
+                    endDate: "2016-02-27",
                     reports: {
                         list: [
                             {

@@ -1,4 +1,4 @@
-import {REPORTS} from '../actions/ReportCRUD'
+import {REPORTS} from "../actions/ReportCRUD";
 
 const reports = (state = {list: [], maxId: 0}, action) => {
     switch(action.type) {
