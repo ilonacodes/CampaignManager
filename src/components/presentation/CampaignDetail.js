@@ -11,9 +11,8 @@ const ReportListItem = ({campaignId, id, title, startDate, endDate, deleteReport
     return <div className="row">
         <div className="col-xs-4 ReportList"><Link to={`/campaigns/${campaignId}/reports/${id}`}>{title}</Link></div>
         <div className="col-xs-4">
-        <div>{startDate}</div>
-        <div>{endDate}</div>
-            </div>
+            <div>{startDate} - {endDate}</div>
+        </div>
         <div className="col-xs-4 Buttons">
             <div className="btn-group">
                 <Link className="btn btn-primary" to={`/campaigns/${campaignId}/reports/${id}/edit`}>Edit</Link>
@@ -37,13 +36,11 @@ const CampaignDetail = ({id, title, reports, deleteReport}) =>
             <div className="col-xs-2">
                 <Link className="glyphicon glyphicon-chevron-left Back" to="/"/>
             </div>
-            <div className="col-xs-8"></div>
+            <div className="col-xs-8 text-center"><h1>{title}</h1></div>
             <div className="col-xs-2"></div>
         </div>
-        <div className="col-xs-2"></div>
-        <div className="col-xs-8 text-center">{title}</div>
 
-        <div className="container-fluid">
+        <div className="container-fluid List">
             <div className="row">
                 {reports.map(report =>
                     <ReportListItem {...report}
@@ -56,7 +53,7 @@ const CampaignDetail = ({id, title, reports, deleteReport}) =>
 
         <div className="row">
             <div className="col-xs-5"></div>
-            <div className="col-xs-2">
+            <div className="col-xs-2 ReportCreate">
                 <Link className="btn btn-success" to={`/campaigns/${id}/reports/create`}>New Report</Link>
             </div>
         </div>
